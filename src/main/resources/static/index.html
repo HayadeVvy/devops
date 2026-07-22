@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Devops</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #ddd;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-	<h1>안녕하세요 devops</h1>
-	<div>Actions 사용하기</div>
-	<div>Actions 사용하기2</div>
+
+<div class="card">
+    <h1>🐱 Random Cat Generator</h1>
+    <img id="cat" src="https://cataas.com/cat?width=600&height=400" alt="Random Cat">
+    <p>Click the button for another cat!</p>
+    <button onclick="newCat()">New Cat</button>
+</div>
+
+<script>
+function newCat() {
+    const img = document.getElementById("cat");
+    img.src = "https://cataas.com/cat?width=600&height=400&t=" + Date.now();
+}
+</script>
+
 </body>
 </html>
